@@ -1,0 +1,182 @@
+/* Door 3 specific styles */
+.container {
+width: 100vw;
+height: 100vh;
+position: relative;
+aspect-ratio: 16/9;
+max-height: 100vh;
+max-width: calc(100vh * 16/9);
+margin: 0 auto;
+background: white;
+overflow: hidden;
+}
+
+.back-door {
+position: absolute;
+top: 20px;
+left: 20px;
+width: 60px;
+height: 80px;
+cursor: pointer;
+z-index: 200;
+transition: all 0.3s ease;
+}
+
+.back-door-image {
+width: 100%;
+height: 100%;
+object-fit: contain;
+border-radius: 4px;
+}
+
+.main-container {
+height: 100vh;
+width: 100%;
+position: relative;
+font-family: monospace;
+background-color: white;
+color: #374151;
+padding: 80px 20px 20px 20px;
+}
+
+.feed-container {
+height: calc(100% - 60px);
+overflow-y: auto;
+padding: 20px;
+scrollbar-width: none;
+-ms-overflow-style: none;
+}
+
+.feed-container::-webkit-scrollbar {
+display: none;
+}
+
+.post {
+border: 1px solid #e5e7eb;
+margin-bottom: 20px;
+padding: 15px;
+border-radius: 8px;
+transition: all 2s ease;
+position: relative;
+background: white;
+}
+
+.post-header {
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+}
+
+.post-avatar {
+width: 30px;
+height: 30px;
+border-radius: 50%;
+margin-right: 10px;
+background-image: url("../images/usuario/alfonstorm.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-color: #d1d5db;
+border: 1px solid #e5e7eb;
+}
+
+.post-username {
+font-weight: bold;
+font-size: 0.9rem;
+}
+
+.post-content {
+margin-bottom: 15px;
+line-height: 1.4;
+font-size: 0.95rem;
+}
+
+.post-engagement {
+display: flex;
+align-items: center;
+gap: 15px;
+font-size: 0.8rem;
+color: #6b7280;
+}
+
+.engagement-item {
+display: flex;
+align-items: center;
+gap: 5px;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.engagement-item:hover {
+color: #374151;
+}
+
+.engagement-count {
+transition: all 0.5s ease;
+}
+
+.algorithm-info {
+position: absolute;
+bottom: 20px;
+left: 50%;
+transform: translateX(-50%);
+text-align: center;
+}
+
+.algorithm-text {
+font-size: 0.9rem;
+opacity: 0.6;
+font-style: italic;
+}
+
+/* Visibility states based on engagement */
+.post.low-engagement {
+opacity: 0.3;
+transform: scale(0.95);
+}
+
+.post.medium-engagement {
+opacity: 0.7;
+transform: scale(0.98);
+}
+
+.post.high-engagement {
+opacity: 1;
+transform: scale(1);
+border-color: #374151;
+}
+
+.post.viral {
+opacity: 1;
+transform: scale(1.02);
+border-color: #000;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+.back-door {
+    width: 40px;
+    height: 60px;
+    top: 10px;
+    left: 10px;
+}
+
+.main-container {
+    padding: 60px 10px 10px 10px;
+}
+
+.post {
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+.post-content {
+    font-size: 0.9rem;
+}
+}
+
+/* Ensure no scroll on main container */
+body {
+overflow: hidden;
+}

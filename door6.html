@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Door 6 - Eco en el Vacío</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/door6.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Back door button -->
+        <div class="back-door" id="backDoor">
+            <img src="images/door6.png" alt="Volver" class="back-door-image">
+        </div>
+        
+        <main class="main-container">
+            <div class="void-space" id="voidSpace">
+                <div class="center-figure" id="centerFigure">
+                    <div class="figure-body"></div>
+                    <div class="mouth" id="mouth"></div>
+                </div>
+                
+                <div class="sound-waves" id="soundWaves"></div>
+                
+                <div class="echo-text" id="echoText">
+                    <span class="echo-word original" id="originalWord">ESTOY ACÁ</span>
+                </div>
+                
+                <div class="void-particles" id="voidParticles"></div>
+                
+                <div class="interaction-hint" id="interactionHint">
+                    Gritá
+                </div>
+            </div>
+            
+            <div class="silence-meter" id="silenceMeter">
+                <div class="meter-label">Nivel de silencio</div>
+                <div class="meter-bar">
+                    <div class="meter-fill" id="meterFill"></div>
+                </div>
+                <div class="meter-text" id="meterText">∞ dB</div>
+            </div>
+            
+            <div class="narrative-overlay" id="narrativeOverlay">
+                <div class="narrative-content">
+                    <p class="narrative-line">En el vacío absoluto</p>
+                    <p class="narrative-line">las palabras se desvanecen</p>
+                    <p class="narrative-line">antes de nacer</p>
+                    <p class="narrative-line">¿Quién escucha</p>
+                    <p class="narrative-line">cuando nadie está?</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/funcionalidad.js"></script>
+    <script src="js/door6.js"></script>
+</body>
+</html>

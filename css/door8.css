@@ -1,0 +1,414 @@
+/* Door 8 specific styles */
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    aspect-ratio: 16/9;
+    max-height: 100vh;
+    max-width: calc(100vh * 16/9);
+    margin: 0 auto;
+    background: white;
+    overflow: hidden;
+}
+
+.back-door {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 60px;
+    height: 80px;
+    cursor: pointer;
+    z-index: 200;
+    transition: all 0.3s ease;
+}
+
+.back-door-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.main-container {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    font-family: monospace;
+    background: white;
+    color: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px 20px 20px;
+}
+
+.maze-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background: #111827;
+    border: 3px solid #6b7280;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.maze-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    gap: 1px;
+}
+
+.maze-cell {
+    background: #374151;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.maze-cell.wall {
+    background: #404040;
+}
+
+.maze-cell.path {
+    background: #BFBFBF;
+}
+
+.maze-cell.visited {
+    background: #8C0303;
+    opacity: 0.3;
+}
+
+.maze-cell.exit {
+    background: #8C0303;
+    animation: exitPulse 2s infinite;
+}
+
+@keyframes exitPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.player {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+    transition: all 0.2s ease;
+    top: 10px;
+    left: 10px;
+}
+
+.player-body {
+    width: 100%;
+    height: 100%;
+    background: #fbbf24;
+    border-radius: 50%;
+    border: 2px solid #f59e0b;
+    position: relative;
+    animation: playerPulse 1.5s infinite;
+}
+
+.player-body::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background: #1f2937;
+    border-radius: 50%;
+}
+
+@keyframes playerPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.player-trail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.trail-dot {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #fbbf24;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: trailFade 3s ease-out forwards;
+}
+
+@keyframes trailFade {
+    0% { opacity: 0.6; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.5); }
+}
+
+.thoughts-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.negative-thought {
+    position: absolute;
+    background: rgba(239, 68, 68, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    animation: thoughtFloat 4s ease-out forwards;
+    z-index: 5;
+}
+
+@keyframes thoughtFloat {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.8);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(-20px) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-80px) scale(0.8);
+    }
+}
+
+.exit-indicator {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.exit-indicator.visible {
+    opacity: 1;
+}
+
+.exit-light {
+    width: 15px;
+    height: 15px;
+    background: red;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    animation: exitPulse 2s infinite;
+}
+
+.exit-text {
+    font-size: 0.6rem;
+    color: #808080;
+    font-weight: bold;
+}
+
+.maze-controls {
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    width: 200px;
+    background: #404040;
+    border: 1px solid #BFBFBF;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.control-section {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.control-label {
+    font-size: 0.8rem;
+    color: #BFBFBF;
+    margin-bottom: 5px;
+}
+
+.thought-counter,
+.attempt-counter {
+    font-size: 1.2rem;
+    color: red;
+    font-weight: bold;
+}
+
+.attempt-counter {
+    color: white;
+}
+
+.reset-button {
+    background: #374151;
+    color: #BFBFBF;
+    border: 1.3px solid #BFBFBF;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: monospace;
+}
+
+.reset-button:hover {
+    background: #590202;
+    border-color: #A60311;
+}
+
+.movement-hint {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    color: #9ca3af;
+    text-align: center;
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+}
+
+.movement-hint.hidden {
+    opacity: 0;
+}
+
+.maze-completion {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.maze-completion.visible {
+    opacity: 1;
+}
+
+.completion-content {
+    text-align: center;
+    max-width: 400px;
+    color: white;
+}
+
+.completion-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ef4444;
+}
+
+.completion-text {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #e5e7eb;
+}
+
+.completion-subtext {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #9ca3af;
+    font-style: italic;
+}
+
+.completion-stats {
+    background: rgba(55, 65, 81, 0.5);
+    border: 1px solid #6b7280;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.stat-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.stat-label {
+    color: white;
+}
+
+.stat-value {
+    color: red;
+    font-weight: bold;
+}
+
+/* Maze generation effects */
+.maze-cell.generating {
+    animation: cellGenerate 0.1s ease-out;
+}
+
+@keyframes cellGenerate {
+    0% { background: #ef4444; }
+    100% { background: #4b5563; }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .back-door {
+        width: 40px;
+        height: 60px;
+        top: 10px;
+        left: 10px;
+    }
+    
+    .main-container {
+        padding: 60px 10px 10px 10px;
+        flex-direction: column;
+    }
+    
+    .maze-container {
+        width: 350px;
+        height: 350px;
+        margin-bottom: 20px;
+    }
+    
+    .maze-controls {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .completion-title {
+        font-size: 1.5rem;
+    }
+    
+    .completion-text {
+        font-size: 1rem;
+    }
+    
+    .movement-hint {
+        bottom: 20px;
+        font-size: 0.8rem;
+        padding: 0 20px;
+    }
+}
+
+/* Ensure no scroll on main container */
+body {
+    overflow: hidden;
+}
