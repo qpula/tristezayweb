@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Door 4 - Lágrimas Pixeladas</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/door4.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Back door button -->
+        <div class="back-door" id="backDoor">
+            <img src="images/door4.png" alt="Volver" class="back-door-image">
+        </div>
+        
+        <main class="main-container">
+            <div class="eye-container" id="eyeContainer">
+                <div class="eye-image-wrapper" id="eyeImageWrapper">
+                    <img src="images/ojo/ojo1.jpg" alt="Ojo" class="eye-image" id="eyeImage">
+                    <canvas id="effectCanvas" class="effect-canvas"></canvas>
+                </div>
+                <div class="interaction-hint" id="interactionHint">
+                    Mantén presionado para pixelar el dolor
+                </div>
+            </div>
+            
+            <div class="glitch-text" id="glitchText">
+                <p class="text-line">El cuerpo del llanto</p>
+                <p class="text-line">se convierte en datos</p>
+                <p class="text-line">píxeles de dolor</p>
+                <p class="text-line">comprimidos</p>
+                <p class="text-line">transmitidos</p>
+                <p class="text-line">perdidos</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/funcionalidad.js"></script>
+    <script src="js/door4.js"></script>
+</body>
+</html>

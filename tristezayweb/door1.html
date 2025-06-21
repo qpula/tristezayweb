@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Door 1 - Interactive Tree</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/door1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content-grid" id="contentGrid">
+            <!-- Back door button -->
+            <div class="back-door" id="backDoor">
+                <img src="images/door1.png" alt="Volver" class="back-door-image">
+            </div>
+            
+            <!-- Main content area -->
+            <div class="image-container" id="imageContainer">
+                <img src="images/iatears/iatears_1-01.png" 
+                     data-hover="images/iatears/iatears_1.png" 
+                     data-children="2,3"
+                     data-level="1"
+                     alt="Imagen Principal" 
+                     class="main-image clickable-image" 
+                     id="mainImage">
+            </div>
+        </div>
+    </div>
+    <script src="js/funcionalidad.js"></script>
+    <script src="js/door1.js"></script>
+</body>
+</html>

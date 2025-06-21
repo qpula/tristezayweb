@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: white;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    aspect-ratio: 16/9;
+    max-height: 100vh;
+    max-width: calc(100vh * 16/9);
+    margin: 0 auto;
+    background: white;
+}
+
+.doors-grid {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background: white;
+}
+
+.door-item {
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+/* Removed hover effects */
+.door-item:hover {
+    /* No hover effects */
+}
+
+.door-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    filter: contrast(1.1);
+}
+
+/* Removed hover effects for images */
+.door-item:hover .door-image {
+    /* No hover effects */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .door-item {
+        width: 70px !important;
+        height: 100px !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .door-item {
+        width: 90px !important;
+        height: 130px !important;
+    }
+}
+
+@media (min-width: 1025px) {
+    .door-item {
+        width: 110px !important;
+        height: 160px !important;
+    }
+}
+
+/* Animation for entrance */
+.door-item {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger animation delays */
+.door-item:nth-child(1) { animation-delay: 0.1s; }
+.door-item:nth-child(2) { animation-delay: 0.2s; }
+.door-item:nth-child(3) { animation-delay: 0.3s; }
+.door-item:nth-child(4) { animation-delay: 0.4s; }
+.door-item:nth-child(5) { animation-delay: 0.5s; }
+.door-item:nth-child(6) { animation-delay: 0.6s; }
+.door-item:nth-child(7) { animation-delay: 0.7s; }
+.door-item:nth-child(8) { animation-delay: 0.8s; }
+.door-item:nth-child(9) { animation-delay: 0.9s; }
+.door-item:nth-child(10) { animation-delay: 1.0s; }
+
+/* Ensure no scroll bars appear */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

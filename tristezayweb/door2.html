@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Door 2 - Music</title>
+    <link rel="stylesheet" href="css/door2.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Back door to return to index -->
+        <div class="back-door" id="backDoor">
+            <img src="images/door2.png" alt="Volver" class="back-door-image">
+        </div>
+        
+        <div class="main-container">
+            <div class="music-gallery">
+                <div class="music-item">
+                    <div class="music-image-container" data-audio="music/music1.mp3">
+                        <img src="images/music/music1.png" alt="Apaga las pantallas" class="music-image" data-hover="images/music/music1c.png" data-original="images/music/music1.png">
+                    </div>
+                    <p class="music-text">apagá las pantallas</p>
+                </div>
+                
+                <div class="music-item">
+                    <div class="music-image-container" data-audio="music/music2.mp3">
+                        <img src="images/music/music2.png" alt="Es sólo una ilusión" class="music-image" data-hover="images/music/music2c.png" data-original="images/music/music2.png">
+                    </div>
+                    <p class="music-text">es sólo una ilusión</p>
+                </div>
+                
+                <div class="music-item">
+                    <div class="music-image-container" data-audio="music/music3.mp3">
+                        <img src="images/music/music3.png" alt="Artificial" class="music-image" data-hover="images/music/music3c.png" data-original="images/music/music3.png">
+                    </div>
+                    <p class="music-text">artificial</p>
+                </div>
+            </div>
+            
+            <div class="audio-controls">
+                <div class="now-playing">
+                    <span id="currentTrackName">Aparente silencio</span>
+                </div>
+                <button id="toggleAudio" class="audio-button">Pause</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/door2.js"></script>
+</body>
+</html>

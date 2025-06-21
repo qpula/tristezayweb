@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Door 8 - Laberinto Mental</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/door8.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Back door button -->
+        <div class="back-door" id="backDoor">
+            <img src="images/door8.png" alt="Volver" class="back-door-image">
+        </div>
+        
+        <main class="main-container">
+            <div class="maze-container" id="mazeContainer">
+                <div class="maze-grid" id="mazeGrid"></div>
+                
+                <div class="player" id="player">
+                    <div class="player-body"></div>
+                    <div class="player-trail" id="playerTrail"></div>
+                </div>
+                
+                <div class="thoughts-overlay" id="thoughtsOverlay"></div>
+                
+                <div class="exit-indicator" id="exitIndicator">
+                    <div class="exit-light"></div>
+                    <span class="exit-text">SALIDA</span>
+                </div>
+            </div>
+            
+            <div class="maze-controls" id="mazeControls">
+                <div class="control-section">
+                    <div class="control-label">Pensamientos negativos</div>
+                    <div class="thought-counter" id="thoughtCounter">0</div>
+                </div>
+                
+                <div class="control-section">
+                    <div class="control-label">Intentos de escape</div>
+                    <div class="attempt-counter" id="attemptCounter">0</div>
+                </div>
+                
+                <div class="control-section">
+                    <button class="reset-button" id="resetButton">Reiniciar laberinto</button>
+                </div>
+            </div>
+            
+          <!--  <div class="movement-hint" id="movementHint">
+                Usa las flechas del teclado o toca para moverte
+            </div> -->
+            
+            <div class="maze-completion" id="mazeCompletion">
+                <div class="completion-content">
+                    <h2 class="completion-title">¿Has salido realmente?</h2>
+                    <p class="completion-text">Los laberintos mentales no tienen salida real</p>
+                    <p class="completion-subtext">Solo cambian de forma</p>
+                    <div class="completion-stats" id="completionStats"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/funcionalidad.js"></script>
+    <script src="js/door8.js"></script>
+</body>
+</html>
